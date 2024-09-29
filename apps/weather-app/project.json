@@ -3,6 +3,13 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/weather-app",
   "projectType": "application",
-  "targets": {},
+  "targets": {
+    "build": {
+      "executor": "@nx/web:webpack",
+      "options": {
+        "postcssConfig": "apps/weather-app/postcss.config.js"
+      }
+    }
+  },
   "tags": []
 }

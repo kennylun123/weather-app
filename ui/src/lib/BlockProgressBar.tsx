@@ -1,4 +1,12 @@
-/* eslint-disable-next-line */
+/**
+ * BlockProgressBar component for displaying a progress bar with a title and value.
+ *
+ * @description The BlockProgressBar component visualizes a percentage completion using a horizontal progress bar, along with a title and the current percentage value.
+ * @props {string} title - The title or label describing the progress being displayed.
+ * @props {string} value - The current value representing the percentage of completion (0-100).
+ * @props {string} barColor - The CSS class that defines the color of the progress bar.
+ */
+
 export interface BlockProgressBarProps {
   title: string;
   value: string;

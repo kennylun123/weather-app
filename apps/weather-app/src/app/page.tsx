@@ -1,3 +1,28 @@
+/**
+ * Index component for rendering the main weather application page.
+ * Tech stacks: NX monorepo, TypeScript, React, Next.js and Tailwind CSS
+ *
+ * @description The Index component fetches weather data based on the user's search parameters and displays the current weather information, metrics, day overview, and a 5-day forecast.
+ * @props {string} searchParams.address - The address for which the weather information is requested.
+ * @props {string} searchParams.metric - The metric system used for temperature display (e.g., 'us' for Fahrenheit, 'uk' for Celsius).
+ * @returns {JSX.Element} The rendered component containing the weather data and forecasts.
+ * @method fetchWeather - Fetches the weather data based on the provided address and metric.
+ * @method getFormattedDate - Formats the date for display.
+ * @method getFormattedTime - Formats the time for display.
+ *
+ *  - Brief for the program flow:
+ *  1: Fetch the required weather data in first load. Utilised with NextJS searchParams to manage the query.
+ *  2: Use the search bar to search weather information for specific place. Show "No result" if input the invalid city name.
+ *  3: Use the metric buttons to control the query of searchParams.
+ *  4: Render the weather data on UI.
+ *
+ *  - Future improvement:
+ *  1. Try different attempt for 'no result' handling. Make a prompt to show message instead of override the existing data.
+ *  2. Calculate the metrics in local to reduce the amount of fetch call in the future.
+ *  3. Further enhance the accessibility.
+ *  4. Refactoring
+ */
+
 import {
   Hero,
   Metrics,

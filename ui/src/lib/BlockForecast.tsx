@@ -1,3 +1,15 @@
+/**
+ * BlockForecast component for displaying a weather forecast block.
+ *
+ * @description The BlockForecast component displays the weather forecast for a specific date, including the weather icon, condition, and temperature range.
+ * @props {string} date - The date for which the forecast is being displayed.
+ * @props {string} icon - The identifier for the weather icon.
+ * @props {string} condition - The weather condition description (e.g., sunny, cloudy).
+ * @props {string} tempMax - The maximum temperature for the day.
+ * @props {string} tempMin - The minimum temperature for the day.
+ * @props {string} metric - The unit of measurement for the temperature (e.g., °C, °F).
+ */
+
 import { getWeatherIconURL } from 'apps/weather-app/utils';
 import Image from 'next/image';
 

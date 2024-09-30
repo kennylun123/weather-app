@@ -1,8 +1,20 @@
+/**
+ * Hero component for displaying the main weather information.
+ *
+ * @description The Hero component presents the weather details for a specific location, including the address, current temperature, date, weather condition, and an associated weather icon. It also includes a search bar for user input.
+ * @props {string} address - The address or location for which the weather is being displayed.
+ * @props {string} temp - The current temperature at the specified location.
+ * @props {string} date - The date corresponding to the weather information.
+ * @props {string} condition - A brief description of the current weather condition (e.g., sunny, rainy).
+ * @props {string} icon - The identifier for the weather icon representing the current condition.
+ * @props {string} metric - The unit of measurement for the temperature (e.g., °C, °F).
+ * @returns {JSX.Element} The rendered component displaying the weather information and search bar.
+ */
+
 import Image from 'next/image';
 import { SearchBar } from '@weather-app/ui';
 import { getWeatherIconURL } from 'apps/weather-app/utils';
 
-/* eslint-disable-next-line */
 export interface HeroProps {
   address: string;
   temp: string;

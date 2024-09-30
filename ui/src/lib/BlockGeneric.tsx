@@ -1,4 +1,12 @@
-/* eslint-disable-next-line */
+/**
+ * BlockGeneric component for displaying a title and a corresponding value.
+ *
+ * @description The BlockGeneric component displays a simple information block with a title and a value, which can optionally include a metric unit.
+ * @props {string} title - The title or label of the information being displayed.
+ * @props {string} value - The value associated with the title.
+ * @props {string} [metric] - The optional unit of measurement for the temperature (e.g., °C, °F).
+ */
+
 export interface BlockGenericProps {
   title: string;
   value: string;

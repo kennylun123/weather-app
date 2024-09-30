@@ -1,9 +1,25 @@
+/**
+ * SearchBar component for entering a location to search for weather information.
+ *
+ * @description The SearchBar component allows users to input an address and submit the search to update the URL parameters. It validates that the input is not empty before performing the search.
+ * @state {string} address - The current value of the input field where the user enters the location.
+ * @method handleSearch - Handles the form submission and validates the input before updating the search parameters.
+ * @method updateSearchParams - Updates the URL search parameters with the provided address.
+ * @returns {JSX.Element} The rendered component containing the input field and a search button.
+ */
+
+/**
+ * SearchButton component for triggering the search action.
+ *
+ * @description The SearchButton component is a button that submits the search form. It can accept additional CSS classes for styling.
+ * @props {string} [otherClasses] - Optional additional CSS classes to apply to the button for custom styling.
+ * @returns {JSX.Element} The rendered button with an SVG icon.
+ */
+
 'use client';
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-
-/* eslint-disable-next-line */
 
 export interface SearchButtonProps {
   otherClasses?: string;

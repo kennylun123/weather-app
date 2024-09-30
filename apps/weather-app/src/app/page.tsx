@@ -3,6 +3,7 @@
  * Tech stacks: NX monorepo, TypeScript, React, Next.js and Tailwind CSS
  *
  * @description The Index component fetches weather data based on the user's search parameters and displays the current weather information, metrics, day overview, and a 5-day forecast.
+ * @props {Object} searchParams - The search parameters passed to the component.
  * @props {string} searchParams.address - The address for which the weather information is requested.
  * @props {string} searchParams.metric - The metric system used for temperature display (e.g., 'us' for Fahrenheit, 'uk' for Celsius).
  * @returns {JSX.Element} The rendered component containing the weather data and forecasts.
@@ -17,10 +18,23 @@
  *  4: Render the weather data on UI.
  *
  *  - Future improvement:
+ *  ** Architectural Choices ** 
+ *  1. Consider using a state management library (e.g., Redux or Zustand) to manage the application's state more effectively, particularly for larger applications.
+ * 
+ *  ** Data Sanitization & Validation **
  *  1. Try different attempt for 'no result' handling. Make a prompt to show message instead of override the existing data.
- *  2. Calculate the metrics in local to reduce the amount of fetch call in the future.
- *  3. Further enhance the accessibility.
- *  4. Refactoring
+ * 
+ *  ** Potential Performance Bottlenecks and Optimizations **
+ *  1. Calculate the metrics in local to reduce the amount of fetch call in the future.
+
+ *  ** Accessibility **
+ *  1. Ensure all interactive elements (e.g., buttons, inputs) are keyboard navigable and have proper aria-labels to enhance accessibility for screen readers.
+ *  2. Implement color contrast checks to ensure text is readable against background colors, improving accessibility for visually impaired users.
+ *  3. Add a modern dark/light mode switcher for user perference.
+
+ *  ** High Fault Tolerance **
+ *  1. Implement error handling for the `fetchWeather` function to gracefully handle API errors and display user-friendly error messages.
+ *  2. Use fallback data or loading states (e.g., React Skeleton) to enhance the user experience during network delays or failures.
  */
 
 import {

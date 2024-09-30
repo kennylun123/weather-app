@@ -15,12 +15,25 @@ export const fetchWeather = async ({
       {
         method: 'GET',
         headers: {},
+        cache: 'no-store',
       }
     );
     // temp: empty result handling
     if (!response.ok) {
       return {
         address: [`No result`],
+        currentConditions: {
+          datetime: new Date(),
+          temp: '0',
+          tempmax: '0',
+          tempmin: '0',
+          humidity: '0',
+          cloudcover: '0',
+          sunrise: '0',
+          sunset: '0',
+          conditions: '--',
+          icon: 'clear-day',
+        },
         days: [
           {
             datetime: new Date(),

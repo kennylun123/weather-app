@@ -63,7 +63,7 @@ export default async function Index({ searchParams }: HomeProps) {
     metric: searchParams.metric || '',
   });
 
-  const { address, days } = result;
+  const { address, days, currentConditions } = result;
   const currentMetric = searchParams.metric === 'us' ? '°F' : '°C';
 
   // const isResultEmpty = typeof result !== "object" || result.length < 1 || !result;
@@ -74,10 +74,10 @@ export default async function Index({ searchParams }: HomeProps) {
       <div className="flex md:flex-row flex-col">
         <Hero
           address={address[0].toUpperCase() + address.slice(1)}
-          temp={String(days[0].temp)}
-          date={getFormattedDate(days[0].datetime)}
-          condition={days[0].conditions}
-          icon={days[0].icon}
+          temp={String(currentConditions.temp)}
+          date={getFormattedDate(new Date().toString())}
+          condition={currentConditions.conditions}
+          icon={currentConditions.icon}
           metric={currentMetric}
         />
         <div className="home">

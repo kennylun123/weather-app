@@ -5,3 +5,6 @@ export * from './lib/Hero';
 export * from './lib/SearchBar';
 export * from './lib/Metrics';
 export * from './lib/CircleButton';
+export * from './lib/BlockGeneric';
+export * from './lib/BlockProgressBar';
+export * from './lib/BlockForecast';

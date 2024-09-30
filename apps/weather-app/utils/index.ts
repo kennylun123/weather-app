@@ -5,12 +5,11 @@ export const fetchWeather = async ({
   address: string;
   metric: string;
 }) => {
-  // Default values
+  // Default query
   address = address || 'brighton';
   metric = metric || 'uk';
 
   try {
-    // unitGroup = us = Fahrenheit, uk = celsius + mile, metric = celsius + km
     const response = await fetch(
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${address}?unitGroup=${metric}&elements=datetime%2Cname%2Ctempmax%2Ctempmin%2Ctemp%2Chumidity%2Ccloudcover%2Csunrise%2Csunset%2Cconditions%2Cicon&include=days%2Ccurrent&key=${process.env.WEATHER_API_KEY}`,
       {
@@ -24,9 +23,76 @@ export const fetchWeather = async ({
         address: [`No result`],
         days: [
           {
-            temp: '',
-            conditions: '',
-            icon: '',
+            datetime: new Date(),
+            temp: '0',
+            tempmax: '0',
+            tempmin: '0',
+            humidity: '0',
+            cloudcover: '0',
+            sunrise: '0',
+            sunset: '0',
+            conditions: '--',
+            icon: 'clear-day',
+          },
+          {
+            datetime: new Date(),
+            temp: '0',
+            tempmax: '0',
+            tempmin: '0',
+            humidity: '0',
+            cloudcover: '0',
+            sunrise: '0',
+            sunset: '0',
+            conditions: '--',
+            icon: 'clear-day',
+          },
+          {
+            datetime: new Date(),
+            temp: '0',
+            tempmax: '0',
+            tempmin: '0',
+            humidity: '0',
+            cloudcover: '0',
+            sunrise: '0',
+            sunset: '0',
+            conditions: '--',
+            icon: 'clear-day',
+          },
+          {
+            datetime: new Date(),
+            temp: '0',
+            tempmax: '0',
+            tempmin: '0',
+            humidity: '0',
+            cloudcover: '0',
+            sunrise: '0',
+            sunset: '0',
+            conditions: '--',
+            icon: 'clear-day',
+          },
+          {
+            datetime: new Date(),
+            temp: '0',
+            tempmax: '0',
+            tempmin: '0',
+            humidity: '0',
+            cloudcover: '0',
+            sunrise: '0',
+            sunset: '0',
+            conditions: '--',
+            icon: 'clear-day',
+          },
+          {
+            datetime: new Date(),
+            temp: '0',
+            tempmax: '0',
+            tempmin: '0',
+            humidity: '0',
+            cloudcover: '0',
+            sunrise: '0',
+            sunset: '0',
+            conditions: '--',
+            icon: 'clear-day',
           },
         ],
         status: response.status,
@@ -75,4 +141,38 @@ export const getWeatherIconURL = (icon: string) => {
     }
   }
   return icon;
+};
+
+export const getFormattedDate = (dateStr: string) => {
+  const date = new Date(dateStr);
+
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 1);
+
+  // Directly return when date is tomorrow
+  if (date.getDate() == tomorrow.getDate()) {
+    return 'Tomorrow';
+  }
+
+  // Define the formatting options
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: 'short',
+    month: 'short',
+    day: '2-digit',
+  };
+
+  // Format the date using toLocaleDateString
+  return date.toLocaleDateString(undefined, options);
+};
+
+export const getFormattedTime = (timeStr: string) => {
+  // Check if sunrise is a valid time string
+  let formattedTime;
+  if (timeStr) {
+    formattedTime = timeStr.replace(/^0?(\d+):(\d+):\d+$/, '$1:$2');
+  } else {
+    formattedTime = '0';
+  }
+  return formattedTime;
 };

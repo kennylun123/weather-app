@@ -1,11 +1,18 @@
-export const fetchWeather = async (address: string) => {
-  // Default address set to brighton
+export const fetchWeather = async ({
+  address,
+  metric,
+}: {
+  address: string;
+  metric: string;
+}) => {
+  // Default values
   address = address || 'brighton';
+  metric = metric || 'uk';
 
   try {
     // unitGroup = us = Fahrenheit, uk = celsius + mile, metric = celsius + km
     const response = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${address}?unitGroup=uk&elements=datetime%2Cname%2Ctempmax%2Ctempmin%2Ctemp%2Chumidity%2Ccloudcover%2Csunrise%2Csunset%2Cconditions%2Cicon&include=days%2Ccurrent&key=${process.env.WEATHER_API_KEY}`,
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${address}?unitGroup=${metric}&elements=datetime%2Cname%2Ctempmax%2Ctempmin%2Ctemp%2Chumidity%2Ccloudcover%2Csunrise%2Csunset%2Cconditions%2Cicon&include=days%2Ccurrent&key=${process.env.WEATHER_API_KEY}`,
       {
         method: 'GET',
         headers: {},

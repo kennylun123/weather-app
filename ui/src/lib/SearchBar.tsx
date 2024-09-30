@@ -29,7 +29,7 @@ export function SearchBar() {
     if (address) {
       searchParams.set('address', address);
     } else {
-      searchParams.delete('model');
+      searchParams.delete('address');
     }
 
     const newPathname = `${

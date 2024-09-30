@@ -3,3 +3,5 @@
 export * from './lib/ui';
 export * from './lib/Hero';
 export * from './lib/SearchBar';
+export * from './lib/Metrics';
+export * from './lib/CircleButton';

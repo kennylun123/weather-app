@@ -8,9 +8,10 @@ export interface HeroProps {
   temp: string;
   condition: string;
   icon: string;
+  metric: string;
 }
 
-export function Hero({ address, temp, condition, icon }: HeroProps) {
+export function Hero({ address, temp, condition, icon, metric }: HeroProps) {
   const today = new Date().toLocaleDateString(undefined, {
     weekday: 'short',
     month: 'short',
@@ -18,7 +19,6 @@ export function Hero({ address, temp, condition, icon }: HeroProps) {
   });
 
   const matchedIcon = getWeatherIconURL(icon);
-
   return (
     <div className="hero">
       <SearchBar />
@@ -34,7 +34,7 @@ export function Hero({ address, temp, condition, icon }: HeroProps) {
         />
         <div className="sm:text-[7rem] text-7xl flex items-center">
           {temp}
-          <span className="sm:text-4xl text-3xl text-white/70">°C</span>
+          <span className="sm:text-4xl text-3xl text-white/70">{metric}</span>
         </div>
         <div className="sm:text-4xl text-3xl mt-8">{condition}</div>
       </div>

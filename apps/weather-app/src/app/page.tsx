@@ -1,15 +1,23 @@
-import { Hero } from '@weather-app/ui';
+import { CircleButton, Hero, Metrics } from '@weather-app/ui';
 import { fetchWeather } from 'apps/weather-app/utils';
 
 export interface HomeProps {
   searchParams: {
     address: string;
+    metric: string;
   };
 }
 
 export default async function Index({ searchParams }: HomeProps) {
-  const result = await fetchWeather(searchParams.address || '');
+  // const result = await fetchWeather({
+  //   address: searchParams.address || '',
+  //   metric: searchParams.metric || '',
+  // });
 
+  // Testing line
+  const result = await fetchWeather({ address: '123', metric: '' });
+
+  console.log(result);
   // const isResultEmpty = typeof result !== "object" || result.length < 1 || !result;
 
   return (
@@ -21,8 +29,10 @@ export default async function Index({ searchParams }: HomeProps) {
           temp={String(result.days[0].temp) || '--'}
           condition={result.days[0].conditions || '--'}
           icon={result.days[0].icon || 'clear-day'}
+          metric={searchParams.metric === 'us' ? '°F' : '°C'}
         />
-        <div className="home__result">
+        <div className="home">
+          <Metrics />
           <div className="">
             {/* day overview */}
             123

@@ -43,8 +43,6 @@
 }
 /* END: Hero styles */
 
-/* ... */
-
 /* START: searchbar styles */
 .searchbar {
   @apply w-full max-w-3xl;
@@ -62,6 +60,20 @@
   @apply min-h-[45px] min-w-[45px] rounded-full outline-none sm:ml-7 ml-6 grid place-content-center bg-white hover:bg-primary-500 focus:bg-primary-500 active:bg-primary-500/60 transition-all;
 }
 /* END: searchbar styles */
+
+/* START: Home styles */
+.home {
+  @apply min-h-screen w-full padding-x padding-y flex flex-col;
+}
+
+.home__metric-button {
+  @apply bg-primary-500 text-white hover:bg-white hover:text-primary-800 focus:bg-white focus:text-primary-800 active:bg-white/60;
+}
+
+.home__metric-button-active {
+  @apply bg-white text-primary-800;
+}
+/* END: Home styles */
 
 /****
 Font family: Capriola

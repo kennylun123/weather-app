@@ -2,9 +2,9 @@
 
 export * from './lib/ui';
 export * from './lib/Hero';
-export * from './lib/SearchBar';
-export * from './lib/Metrics';
-export * from './lib/CircleButton';
+export { SearchBar } from './lib/SearchBar';
+export { Metrics } from './lib/Metrics';
+export { CircleButton } from './lib/CircleButton';
 export * from './lib/BlockGeneric';
 export * from './lib/BlockProgressBar';
 export * from './lib/BlockForecast';

@@ -2,6 +2,10 @@
 
 ![image 1](https://github.com/echo724/notion2md/assets/78376735/6b880ad1-3ff2-4cdd-8d06-ff708314772d)
 
+## Live Demo
+
+[https://weather-app-beta-drab-32.vercel.app/](https://weather-app-beta-drab-32.vercel.app/)
+
 ### Objective
 
 Using a NX monorepo, TypeScript, React and Next.js your task is to build a Weather App.
